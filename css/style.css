@@ -1,0 +1,301 @@
+*{
+    translate: yes;
+}
+html{
+    scroll-behavior: smooth;
+}
+nav, ul{
+    list-style: none;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    color: #222;
+    background-color: aqua;
+}
+nav,ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+a:hover{
+    opacity: 1;
+}
+.head{
+    background-color: transparent;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 0px;
+}
+
+.head img{
+    width: 80px;
+    display: none;
+}
+.head nav{
+    display: flex;
+}
+.head li a{
+    color: #fff;
+    text-transform: uppercase;
+}
+.head #home{
+    display: none;
+}
+.head li a:hover{
+    color: aqua;
+    transition: 1.2s;
+    border-bottom: 2px solid aqua;
+}
+.head li{
+    margin: 0 12px;
+}
+@media screen and (max-width: 700px) {
+    .head{
+        display: none;
+    }
+}
+.header_container{
+    width: 100%;
+    height: 100vh;
+    /*background: #6e6ee4;*/
+    animation: mudarbg 20s infinite;
+    background-image: url(../imagens/programming.jpg);
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size:cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 0 112px;
+    position: relative;
+}
+@media (max-width: 800px){
+    .header_container{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    }
+}
+/* HOME ANIMATION */
+@keyframes mudarbg{
+    30% {
+        background-image: url(../imagens/Programming_for_Lawyers.png);
+    }
+    60%{
+        background-image: url(../imagens/web.jpg);
+        background-position-y: center;
+    }
+    80%{
+        background-image: url(../imagens/photo-codes.jfif);
+    }
+    100%{
+        background-image: url(../imagens/programming.jpg);
+    }
+}
+
+
+h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+h2{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.social_media{
+    margin-top: 1rem;
+    display: flex;
+}
+.social_media a{
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    padding: 1rem 4rem;
+    border: 1px solid #1e1e2a;
+    min-width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ease-in-out;
+}
+.social_media a:hover{
+    background: #fff;
+    color: goldenrod;
+    border: 1px solid goldenrod;
+}
+.checkbox_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.check{
+    visibility: hidden;
+}
+.checkbox{
+    visibility: hidden;
+}
+
+/*.checkbox {
+    height: 100px;
+    width: 100px;
+    /*position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    transition: 400ms ease-in-out 0s;
+}*/
+.checkbox .trace{
+    width: 50px;
+    height: 5px;
+    background: #fff;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+}
+.checkbox .trace:nth-child(1){
+    top: 26px;
+    transform: rotate(0);
+}
+.checkbox .trace:nth-child(2){
+    top: 46px;
+    transform: rotate(0);
+}
+.checkbox .trace:nth-child(3){
+    top: 66px;
+    transform: rotate(0);
+}
+
+.menu{
+    position: absolute;
+    top: 45px;
+    right: 30px;
+    background-color: transparent;
+    height: 4px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px #fff;
+    z-index: -1;
+    transition: 400ms ease-in-out 0s;
+}
+.menu-items{
+    background: #222;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease-in-out 0s;
+}
+.menu-items ul{
+    list-style-type: none;
+}
+.menu-items ul li a{
+    margin: 10px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 40px;
+}
+
+.menu-items ul li a:hover{
+    color: goldenrod;
+    transition: 0.5s ease-in-out;
+}
+
+#taggle:checked + .checkbox .trace:nth-child(1){
+    transform: rotate(45deg);
+    top: 47px;
+}
+#taggle:checked + .checkbox .trace:nth-child(2){
+    transform: translate(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+#taggle:checked + .checkbox .trace:nth-child(3){
+    transform: rotate(-45deg);
+    top: 48px;
+}
+#taggle:checked + .checkbox{
+    background: #222;
+}
+#taggle:checked ~ .menu{
+    box-shadow: 0px 0px 0px 100vmax #fff;
+    z-index: 1;
+}
+
+#taggle:checked ~ .menu-items{
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 700px){
+    .checkbox {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 999;
+        transition: 400ms ease-in-out 0s;
+    }
+    .checkbox{
+        visibility: visible;
+        position: fixed;
+    }
+}
+
+
+@media (max-width: 600px){
+    h1{
+        font-size: 40px;
+        width: 100%;
+    }
+}
+ 
+@media (max-width:600px){
+    .header_container{
+        width: 100%;
+    }
+    .social_media{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .check{
+        font-size: 10px;
+    }
+}
+@media (max-width: 600px){
+    .menu, .menu-items, .menu-items ul li a, .container, .card-container{
+        width: 100%;
+    }
+}
+    

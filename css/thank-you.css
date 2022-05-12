@@ -1,0 +1,213 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color:#9d00ff;
+}
+.header{
+    padding: 1rem;
+}
+.header h1{
+    font-size: 35px;
+    font-family:'Roboto Slab' serif;
+    text-transform: uppercase;
+    font-weight: 800; 
+    color: #00ffb8;
+    /*box-shadow: 0px 0px 0px 2px;*/
+    text-align:center;
+}
+.header h1::after, .header h1::before{
+    content: "";
+    width: 400px;
+    height: 3px;
+    background: currentColor;
+    margin: 0 auto;
+    display: block;
+    border-radius: 50px;
+}
+#thank_corpo{
+   display: flex;
+   opacity: 0;
+}
+/*Thank-corpo left side*/
+.left{
+    display: block;
+    box-shadow:0px 12px 25px 0px #673AB7;
+    width: 47%;
+    margin-left: 3%;
+    height: auto;
+    padding-right: 10px;
+}
+.left p{
+    font-family: 'Roboto Slab' serif;
+    font-size: 25px;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.left h2, h3{
+    font-size: 30px;
+    font-weight: 900;
+    margin: 1.5%;
+    text-align: center;
+    color: rgb(115, 240, 104);
+}
+.left h2::after{
+    content: "";
+    display: block;
+    height: 5px;
+    width: 250px;
+    background-color: currentColor;
+    margin: 0 auto;
+    border-radius: 50px;
+}
+#thank_corpo .left .links{
+    position: relative;
+    display: flex;
+}
+
+#thank_corpo .left .links a{
+    text-decoration: none;
+    color: #000;
+}
+#thank_corpo .left .links button{
+    box-sizing: border-box;
+    display: flex;
+    padding: 2%;
+    position: relative;
+    justify-content: center;
+    font-family: 'Roboto Slab' serif;
+    font-weight: 800;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+#thank_corpo .left .links button{
+    margin: 10px auto;
+    cursor: pointer;
+    background-color: chartreuse;
+    border: none;
+    border-radius: 4px;
+}
+#thank_corpo .left .links button:hover{
+    background-color: rgb(25, 0, 255);
+    transition: .5s;
+    color: #00ffb8;
+}
+/*Thank-corpo right side*/
+#thank_corpo-right{
+    display: block;
+    padding-right: -3%;
+    box-shadow:0px 12px 25px 0px #673AB7;
+    width: 47%;
+    height: auto;
+}
+
+/*animation*/
+#thank_corpo.animar{
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    transform: translateX(-200px);
+}
+
+@keyframes slide{
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#thank_corpo-right h1{
+    font-size: 30px;
+    font-weight: 900;
+    margin: 1.5%;
+    text-align: center;
+    color: rgb(115, 240, 104);
+}
+#thank_corpo-right h1::after{
+    content: "";
+    margin: 0 auto;
+    height: 5px;
+    width: 200px;
+    display: block;
+    background-color: currentColor;
+    border-radius: 50px;
+}
+#thank_corpo-right p{
+    font-family: 'Roboto Slab' serif;
+    font-size: 25px;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+#thank_corpo-right a{
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    font-family: 'Roboto Slab' serif;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+#thank_corpo-right .button{
+    padding: 2%;
+    margin: 0 auto;
+    background-color: rgb(127, 255, 0);
+    display: block;
+    width: 80%;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 2px 5px 20px 10px #673AB7;
+    position: relative;
+    margin-top: 20%;
+}
+#thank_corpo-right .button:hover{
+    background-color: rgb(25, 0, 255);
+    color: #000;
+    transition: .5s;
+}
+@media (max-width: 804px){
+    .left p{
+        font-size: 19px;
+    }
+}
+@media (max-width: 674px){
+    #thank_corpo {
+        width: 100%;
+        display: block;
+    }
+    .left{
+        width: 90%;
+        margin-bottom: 30px;
+        margin: 0 auto;
+        border: 2px solid black;
+    }
+    .header h1::after, .header h1::before{
+        content: "";
+        width: auto;
+        /*height: 3px;
+        background: currentColor;
+        margin: 0 auto;
+        display: block;
+        border-radius: 50px;*/
+    }
+    #thank_corpo-right{
+        width: 90%;
+        margin: 0 auto;
+        border: 2px solid black;
+        margin-top: 50px
+    }
+}
+@media (max-width: 336px){
+    #thank_corpo .left .links button{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 480px){
+    #thank_corpo-right{
+        margin-bottom: 2rem;
+    }
+}

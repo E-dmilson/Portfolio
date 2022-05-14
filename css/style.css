@@ -269,7 +269,7 @@ h2{
     }
     .checkbox{
         visibility: visible;
-        position: fixed;
+        position: absolute;
     }
 }
 
